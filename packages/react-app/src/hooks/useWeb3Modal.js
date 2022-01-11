@@ -1,11 +1,15 @@
 import { Web3Provider } from "@ethersproject/providers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import Fortmatic from "fortmatic";
+import Portis from "@portis/web3";
+import Torus from "@toruslabs/torus-embed";
+
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Web3Modal from "web3modal";
 
 // Enter a valid infura key here to avoid being rate limited
 // You can get a key for free at https://infura.io/register
-const INFURA_ID = "INVALID_INFURA_KEY";
+const INFURA_ID = "f3ff95210f0c42e0ae133e610deab89e";
 
 const NETWORK = "mainnet";
 
@@ -14,13 +18,33 @@ function useWeb3Modal(config = {}) {
   const [autoLoaded, setAutoLoaded] = useState(false);
   const { autoLoad = true, infuraId = INFURA_ID, network = NETWORK } = config;
 
+
   // Web3Modal also supports many other wallets.
   // You can see other options at https://github.com/Web3Modal/web3modal
   const web3Modal = useMemo(() => {
+    const customNetworkOptions = {
+      rpcUrl: 'https://mainnet.infura.io/v3/eb712358b90f44e694ae16c90d922b19',
+      chainId: 1
+    }
+
     return new Web3Modal({
       network,
       cacheProvider: true,
       providerOptions: {
+        portis: {
+          package: Portis, // required
+          options: {
+            id: "f127a727-8db0-48e0-9c3c-bf2e7dc9d00e" // required
+          }
+        },
+        torus: {
+          package: Torus, // required
+          options: {
+            networkParams: {
+              host: "https://localhost:3000", // optional
+            }
+          }
+        },
         walletconnect: {
           package: WalletConnectProvider,
           options: {
@@ -28,6 +52,13 @@ function useWeb3Modal(config = {}) {
           },
         },
       },
+      fortmatic: {
+        package: Fortmatic, // required
+        options: {
+          key: "pk_live_658B798DAF01F7F4", // required,
+          network: customNetworkOptions // if we don't pass it, it will default to localhost:8454
+        }
+      }
     });
   }, [infuraId, network]);
 

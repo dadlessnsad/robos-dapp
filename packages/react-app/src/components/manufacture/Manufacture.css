@@ -1,0 +1,22 @@
+.Manufacture {
+    display: flex;
+    min-height: 140vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-image: url(../../images/buildRobos.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+.ManufactureBox {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: clamp(25%, 700px, 90%);
+  height: min(50%, 300px);
+  border-radius: 12px;
+}
+
+.ManufactureTitle {
+  color: black;
+}

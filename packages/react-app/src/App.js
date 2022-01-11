@@ -3,9 +3,17 @@ import { Contract } from "@ethersproject/contracts";
 import { getDefaultProvider } from "@ethersproject/providers";
 import React, { useEffect, useState } from "react";
 
-import { Body, Button, Header, Image, Link } from "./components";
-import logo from "./ethereumLogo.png";
+import {Button} from "./components";
+import './styles/App.css';
+import logo from "./images/RLogo.png";
+import LandingLogo from './images/RobosLogo.png';
 import useWeb3Modal from "./hooks/useWeb3Modal";
+
+import Mint from "./components/mint/Mint"
+import Roadmap from "./components/roadmap/Roadmap"
+import Team from "./components/team/Team"
+import Manufacture from "./components/manufacture/Manufacture"
+
 
 import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
@@ -55,18 +63,19 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
   }, [account, provider, setAccount, setRendered]);
 
   return (
-    <Button
-      onClick={() => {
-        if (!provider) {
-          loadWeb3Modal();
-        } else {
-          logoutOfWeb3Modal();
-        }
-      }}
+    <button
+        className="connectButton" 
+        onClick={() => {
+            if (!provider) {
+                loadWeb3Modal();
+            } else {
+                logoutOfWeb3Modal();
+            }
+        }}
     >
       {rendered === "" && "Connect Wallet"}
       {rendered !== "" && rendered}
-    </Button>
+    </button>
   );
 }
 
@@ -81,26 +90,51 @@ function App() {
   }, [loading, error, data]);
 
   return (
-    <div>
-      <Header>
-        <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
-      </Header>
-      <Body>
-        <Image src={logo} alt="react-logo" />
-        <p>
-          Edit <code>packages/react-app/src/App.js</code> and save to reload.
-        </p>
-        {/* Remove the "hidden" prop and open the JavaScript console in the browser to see what this function does */}
-        <Button hidden onClick={() => readOnChainData()}>
-          Read On-Chain Balance
-        </Button>
-        <Link href="https://ethereum.org/developers/#getting-started" style={{ marginTop: "8px" }}>
-          Learn Ethereum
-        </Link>
-        <Link href="https://reactjs.org">Learn React</Link>
-        <Link href="https://thegraph.com/docs/quick-start">Learn The Graph</Link>
-      </Body>
+  <main className="background">    
+    <div className="App">
+        <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="headerText"><a href="/" className="header-Links">Home</a></h1>
+            <h1 className="headerText"><a href="#Roadmap" className="header-Links">About</a></h1>
+            <h1 className="headerTextBolts"><a href="/" className="header-Links">$BOLTS</a></h1>
+            <h1 className="headerText"><a href="/" className="header-Links">Claim</a></h1>
+            <h1 className="headerTextVote"><a href="/" className="header-Links">Vote</a></h1>
+            <h1 className="headerText"><a href="#Mint" className="header-Links">Mint</a></h1>
+            <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
+            <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
+        </header>
+        <div className="App-LandingPage">
+            <div className="App-LandingImage">
+                <img src={LandingLogo} className="App-LandingLogo" alt="logo" />
+            </div>
+                {/* Remove the "hidden" prop and open the JavaScript console in the browser to see what this function does */}
+                <Button hidden onClick={() => readOnChainData()}>
+                    Read On-Chain Balance
+                </Button>
+        </div>
     </div>
+    <Roadmap />
+    <Mint />
+    <Manufacture />
+    <Team />
+        <footer className="App-Footer">
+            <div className="Footer-left">
+                <img src={logo} className="App-logo" alt="logo" />
+            </div>
+            <div className="Footer-center">
+                <h4 className="FooterTitle">Contracts</h4>
+                <p className="FooterText">Etherscan</p>
+                <p className="FooterText">Etherscan</p>
+                <p className="FooterText">Glitches?</p>
+            </div>
+            <div className="Footer-right">
+                <h4 className="FooterTitle">Socials</h4>
+                <p className="FooterText">Twitter</p>
+                <p className="FooterText">Discord</p>
+                <p className="FooterText">OpenSea</p>
+            </div>
+        </footer>
+    </main>
   );
 }
 

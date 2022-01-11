@@ -1,0 +1,233 @@
+.background {
+  background-image: url(../images/Background_Animation.gif);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.App {
+    min-height: 100vh;
+    background-image: url(../images/Background_Animation.gif);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /*#region Header */
+  .App-header {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    max-height: 88px;
+    padding: 20px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+  }
+  
+  .App-logo {
+    height: 50px;
+    width: 50px;
+    pointer-events: none;
+  }
+  
+  .connectButton {
+    height: 50px;
+    margin-left: 40px;
+    padding: 5px;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: rgba(0, 0, 85, 0.5);
+    border-radius: 12px;
+  }
+  
+  .headerText {
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 40px;
+  }
+
+  .headerTextVote {
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 40px;
+  }
+
+  .headerTextBolts {
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 40px;
+  }
+  
+  .header-Links {
+    text-decoration: none;
+    color: #fff;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  /*#endregion */
+  
+  /*#region Landing Page */
+  .App-LandingPage {
+    display: flex;
+    height: 720px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .App-LandingImage {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .App-LandingLogo {
+    max-width: 604px;
+    max-height: 200px;
+  }
+  /*#endregion */
+  
+  /*#region Footer */
+  .App-Footer {
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    max-height: 169px;
+    background: rgba(0, 0, 0, 1);
+  }
+  
+  .FooterTitle {
+    color: #fff;
+    justify-self: flex-start;
+  }
+  
+  .FooterText {
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  .Footer-left {
+    width: 33%;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Footer-center {
+    width: 33%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Footer-right {
+    width: 33%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  
+  /*#endregion */
+  
+  @media only screen and (max-width: 600px) {
+    .App {
+      min-height: 100vh;
+      background-image: url(../images/Background_Animation.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; /* Center the image */
+    }
+  
+    /*#region Header */
+    .App-header {
+      z-index: 999;
+      display: flex;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 88px;
+      padding: 2px;
+      max-width: 100%;
+    }
+  
+    .App-logo {
+      height: 25px;
+      width: 25px;
+      pointer-events: none;
+    }
+  
+    .connectButton {
+      height: 50px;
+      margin-left: 2px;
+      cursor: pointer;
+      font-size: .8rem;
+    }
+  
+    .headerText {
+      font-size: 14px;
+      color: #fff;
+      margin-left: 10px;
+    }
+    .headerTextVote {
+      display: none !important;
+    }
+  
+    .headerTextBolts {
+      display: none !important;
+    }
+    /*#endregion */
+  
+    /*#region Landing Page */
+    .App-LandingPage {
+      display: flex;
+      height: 720px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .App-LandingImage {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .App-LandingLogo {
+      max-width: 400px;
+      max-height: 150px;
+    }
+    /*#endregion */
+  
+    /*#region Footer */
+    .App-Footer {
+      display: flex;
+      max-height: 169px;
+      background: rgba(0, 0, 0, 1);
+    }
+  
+    .FooterTitle {
+      color: #fff;
+    }
+  
+    .FooterText {
+      color: #fff;
+      flex-direction: column;
+    }
+  
+    .FooterLeft {
+      justify-content: flex-start;
+    }
+  
+    /*#endregion */
+  }
+  
