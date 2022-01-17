@@ -25,13 +25,13 @@ function Team() {
                         </div>
                     </div>
                     <div class="tags">
-                        <a href="#">Twitter</a>
-                        <a href="#">Discord</a>
+                        <a href="https://twitter.com/Xurgz">Twitter</a>
+                        <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
             </article>
             <article class="card">
                 <header class="card-header">
-                    <h2>Artist</h2>
+                    <h2>Project Artist</h2>
                 </header>
 
                 <div class="card-author">
@@ -41,18 +41,18 @@ function Team() {
     
 
                     <div class="author-name">
-                        <div class="author-name-prefix"></div>
+                        <div class="author-name-prefix">Legened</div>
                             Zed
                         </div>
                     </div>
                     <div class="tags">
-                        <a href="#">Twitter</a>
-                        <a href="#">Discord</a>
+                        <a href="https://twitter.com/Zed_nft">Twitter</a>
+                        <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
             </article>
             <article class="card">
                 <header class="card-header">
-                    <h2>Developer</h2>
+                    <h2>Project Developer</h2>
                 </header>
 
                 <div class="card-author">
@@ -62,13 +62,13 @@ function Team() {
     
 
                     <div class="author-name">
-                        <div class="author-name-prefix"></div>
+                        <div class="author-name-prefix">0xOrphan</div>
                             DadlessNsad
                         </div>
                     </div>
                     <div class="tags">
-                        <a href="#">Twitter</a>
-                        <a href="#">Discord</a>
+                        <a href="https://twitter.com/0xOrphan">Twitter</a>
+                        <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
             </article>
             <article class="card">
@@ -83,13 +83,13 @@ function Team() {
     
 
                     <div class="author-name">
-                        <div class="author-name-prefix">Master</div>
+                        <div class="author-name-prefix"></div>
                             Windu
                         </div>
                     </div>
                     <div class="tags">
-                        <a href="#">Twitter</a>
-                        <a href="#">Discord</a>
+                        <a href="https://twitter.com/WinduNFT">Twitter</a>
+                        <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
             </article>
         </div>

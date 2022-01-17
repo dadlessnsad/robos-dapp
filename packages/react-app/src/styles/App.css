@@ -26,6 +26,7 @@
     padding: 20px;
     width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+    z-index: 999;
   }
   
   .App-logo {
@@ -94,11 +95,14 @@
   
   /*#region Footer */
   .App-Footer {
+    padding-bottom: 40px;
     z-index: 999;
     display: flex;
+    width: 100%;
     align-items: center;
     text-align: center;
     justify-content: center;
+    min-height: 88px;
     max-height: 169px;
     background: rgba(0, 0, 0, 1);
   }
@@ -109,12 +113,34 @@
   }
   
   .FooterText {
+    display: inline;
+    padding: 1rem;
     color: #fff;
-    flex-direction: column;
     justify-content: center;
   }
   
+  .footerlogo {
+    max-width: 20px;
+    max-width: 20px;
+    align-items: center;
+    text-align: center;
+  }
   
+  .FooterApp-logo {
+    padding-top: 1.5rem;
+    height: 75px;
+    width: 75px;
+    pointer-events: none;
+  }
+
+  .GlitchesLogo {
+    padding-left: 1rem;
+    max-width: 100px;
+    max-height: 50px;
+    align-items: center;
+    text-align: center;
+  }
+
   .Footer-left {
     width: 33%;
     justify-content: flex-start;

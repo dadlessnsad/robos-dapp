@@ -6,6 +6,11 @@ import React, { useEffect, useState } from "react";
 import {Button} from "./components";
 import './styles/App.css';
 import logo from "./images/RLogo.png";
+import DiscordLogo from "./images/Discord-Logo-White.png";
+import OpenseaLogo from "./images/OpenseaLogomarkWhite.png";
+import TwitterLogo from "./images/TwitterLogowhite.png";
+import EtherScanLogo from "./images/etherscanLogo.png";
+import GlitchesLogo from "./images/GlitchLogo.png";
 import LandingLogo from './images/RobosLogo.png';
 import useWeb3Modal from "./hooks/useWeb3Modal";
 
@@ -13,7 +18,7 @@ import Mint from "./components/mint/Mint"
 import Roadmap from "./components/roadmap/Roadmap"
 import Team from "./components/team/Team"
 import Manufacture from "./components/manufacture/Manufacture"
-
+import Accordion from "./components/accordion/accordion"
 
 import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
@@ -117,21 +122,31 @@ function App() {
     <Mint />
     <Manufacture />
     <Team />
+    <Accordion />
         <footer className="App-Footer">
             <div className="Footer-left">
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo} className="FooterApp-logo" alt="logo" />
             </div>
             <div className="Footer-center">
                 <h4 className="FooterTitle">Contracts</h4>
-                <p className="FooterText">Etherscan</p>
-                <p className="FooterText">Etherscan</p>
-                <p className="FooterText">Glitches?</p>
+                <img src={EtherScanLogo} className="GlitchesLogo" alt = "Etherscan Logo" />
+                <img src={EtherScanLogo} className="GlitchesLogo" alt = "Etherscan Logo" />
+                <img src={GlitchesLogo} className="GlitchesLogo" alt = "Glitch Logo" />
             </div>
             <div className="Footer-right">
                 <h4 className="FooterTitle">Socials</h4>
-                <p className="FooterText">Twitter</p>
-                <p className="FooterText">Discord</p>
-                <p className="FooterText">OpenSea</p>
+                <a href="https://twitter.com/RobosDAO">
+                  <img src={TwitterLogo} className="footerlogo" alt = "Twitter Logo" />
+                </a>
+                <a href="https://twitter.com/RobosDAO" className="FooterText">Twitter</a>
+                <a href="https://discord.gg/bctUawQPB3">
+                  <img src={DiscordLogo} className="footerlogo" alt = "Discord Logo" />
+                </a>
+                <a href="https://discord.gg/bctUawQPB3" className="FooterText">Discord</a>
+                <a href="https://opensea.io/">
+                  <img src={OpenseaLogo} className="footerlogo" alt = "Opensea Logo" />
+                </a>
+                <a href="https://opensea.io/" className="FooterText">OpenSea</a>
             </div>
         </footer>
     </main>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); 
+.accordion-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    
+}
+
+.accordion {
+    width: clamp(30%, 700px, 90%);
+    height: min(50%, 300px);
+}
+
+.questions {
+    width: 100%;
+    font-family: 'Orbitron', sans-serif; 
+}
