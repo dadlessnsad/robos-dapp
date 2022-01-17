@@ -10,11 +10,56 @@
     background-position: center;
   }
   
+.Manufacturelayout {
+  display:block;
+}
 .ManufactureBox {
   background-color: rgba(255, 255, 255, 0.4);
   width: clamp(25%, 700px, 90%);
   height: min(50%, 300px);
   border-radius: 12px;
+}
+
+.ManufactureCtn {
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  grid-row-gap: 1.5rem;
+  width: clamp(20%, 400px, 90%);
+  height: min(75%, 400px);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.ManufactureBox1 {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+}
+
+.ManufactureBox2 {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+}
+
+.ManufactureBtn {
+  height: 50px;
+  margin-left: 40px;
+  padding: 5px;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 85, 0.5);
+  border-radius: 12px;
+}
+
+.BtnCTN {
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+.UserRobo {
+  height: 200px;
+  width: 200px;
 }
 
 .ManufactureTitle {
