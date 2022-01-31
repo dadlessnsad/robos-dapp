@@ -30,10 +30,10 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 20 }}
+              sx={{ width: "100%", flexShrink: 20 }}
               className="questions"
             >
-              Question 1
+              When will Robos be available to mint?
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -43,8 +43,7 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              A: TBD (end of Feb/Early March)
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -63,9 +62,9 @@ export default function ControlledAccordions() {
           >
             <Typography
               className="questions"
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
             >
-              Is XurgI Single?????
+              What is the mint price of Robos?
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -75,15 +74,7 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              All the single XURG'S, all the single XURG'S All the single
-              XURG'S, all the single XURG'S All the single XURG'S, all the
-              single XURG'S All the single XURG'S Cause if you liked it then you
-              should have put a BID on it If you liked it then you shoulda put a
-              BID on it Don't be mad once you see that he's FLEXIN it If you
-              liked it then you shoulda put a BID on it Oh, oh, oh If you liked
-              it then you should have put a BID on it If you liked it then you
-              shoulda put a BID on it Don't be mad once you see that he' FLEXIN
-              it If you liked it then you shoulda put a BID on it
+              TBD
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -101,10 +92,10 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="questions"
             >
-              Question 3
+              How many Robos are available to mint?
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -114,8 +105,7 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              5000 Genesis and 2,500 Jr's are able to be manufactured.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -133,10 +123,10 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="questions"
             >
-              Question 4
+              What are $Bolts?
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -146,8 +136,7 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              $Bolts are Robos utility token that gives you the ability to Name your Robo, Write his story, manufacture a JR, Vote on the Snapshot DAO, and much more (to be announced)
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -165,10 +154,10 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="questions"
             >
-              Question 5
+              How do I stay up to date on all things Robos?
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -178,8 +167,9 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              Via our Discord server and social media pages.<br />
+              <a className="links" href='https://twitter.com/RobosDAO'>Twitter</a><br />
+              <a className="links" href='https://www.instagram.com/robosdao'>Instagram</a>
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -197,10 +187,10 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
+              sx={{ width: "100%", flexShrink: 0 }}
               className="questions"
             >
-              Question 6
+              If you have any other questions or concerns email XXXXXXX@XXxxx.COM and the team will get back to you as soon as possible.
             </Typography>
           </AccordionSummary>
           <AccordionDetails
@@ -210,140 +200,11 @@ export default function ControlledAccordions() {
             }}
           >
             <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+            
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion
-          expanded={expanded === "panel7"}
-          onChange={handleChange("panel7")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4bh-content"
-            id="panel4bh-header"
-            sx={{
-              bgcolor: "#2c0280", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
-              className="questions"
-            >
-              Question 7
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              bgcolor: "#2c0280e1", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel8"}
-          onChange={handleChange("panel8")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4bh-content"
-            id="panel4bh-header"
-            sx={{
-              bgcolor: "#2c0280", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
-              className="questions"
-            >
-              Question 8
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              bgcolor: "#2c0280e1", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel9"}
-          onChange={handleChange("panel9")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4bh-content"
-            id="panel4bh-header"
-            sx={{
-              bgcolor: "#2c0280", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
-              className="questions"
-            >
-              Question 9
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              bgcolor: "#2c0280e1", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel10"}
-          onChange={handleChange("panel10")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4bh-content"
-            id="panel4bh-header"
-            sx={{
-              bgcolor: "#2c0280", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography
-              sx={{ width: "33%", flexShrink: 0 }}
-              className="questions"
-            >
-              Question 10
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails
-            sx={{
-              bgcolor: "#2c0280e1", // use summary background color
-              color: "white", // use summary default color
-            }}
-          >
-            <Typography className="anwsers">
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      </div>
+       </div>
     </div>
   );
 }

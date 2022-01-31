@@ -1,10 +1,13 @@
 import "./Mint.css";
-import React, {  useCallback, useState } from "react";
+import React, { useState } from "react";
 import MintLogo from "../../images/GenesisRobos/2.png";
 import RobosNFT from '../../utils/RobosNFT.json';
 import { ethers } from 'ethers'
 import useWeb3Modal from "../../hooks/useWeb3Modal";
+import Counter from '../counter/counter';
 import { account } from '../../App'
+
+
 
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1);
@@ -97,7 +100,9 @@ function Mint() {
         </div>
         <button 
           onClick={handleMint}
-          className="mintButton">Mint</button>
+          className="mintButton">Mint
+        </button>
+        <Counter />
       </div>
     </div>
   );
