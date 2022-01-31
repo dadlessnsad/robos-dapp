@@ -2,7 +2,7 @@
 import './Roadmap.css';
 import React from "react";
 
-import RoadmapIMG from "../../images/Roadmap.png";
+import RoadmapIMG from "../../images/Robo Roadmap.png";
 
 function Roadmap() {
     return(

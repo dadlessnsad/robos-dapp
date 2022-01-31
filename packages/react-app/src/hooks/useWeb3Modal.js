@@ -9,9 +9,9 @@ import Web3Modal from "web3modal";
 
 // Enter a valid infura key here to avoid being rate limited
 // You can get a key for free at https://infura.io/register
-const INFURA_ID = "f3ff95210f0c42e0ae133e610deab89e";
+const INFURA_ID = "";
 
-const NETWORK = "mainnet";
+const NETWORK = "rinkeby";
 
 function useWeb3Modal(config = {}) {
   const [provider, setProvider] = useState();
@@ -23,8 +23,8 @@ function useWeb3Modal(config = {}) {
   // You can see other options at https://github.com/Web3Modal/web3modal
   const web3Modal = useMemo(() => {
     const customNetworkOptions = {
-      rpcUrl: 'https://mainnet.infura.io/v3/eb712358b90f44e694ae16c90d922b19',
-      chainId: 1
+      rpcUrl: 'https://rinkeby.infura.io/v3/',
+      chainId: 4
     }
 
     return new Web3Modal({
