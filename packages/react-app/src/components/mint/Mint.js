@@ -60,9 +60,9 @@ function Mint() {
     <div className="container" id="Mint">
       <div className="mintPage">
         <div className="mintTop">
-          <h1 className="mintTitle">Mint to Join the $Robos Fam!!</h1>
+          <h1 className="mintTitle">Mint to Join the $Robos Fam!</h1>
           <p className="mintdescription">
-            Earn "x" amount of Robo Coins Daily per Robo!
+            Manufacture, & name your Robo!
           </p>
         </div>
 
@@ -74,7 +74,6 @@ function Mint() {
           width="175"
           height="175"
         />
-
         <div className="countContainer">
           <button
             className="subButton"
@@ -102,7 +101,7 @@ function Mint() {
           onClick={handleMint}
           className="mintButton">Mint
         </button>
-        <Counter />
+        <h2>Ξ {ethValue} <Counter /></h2>
       </div>
     </div>
   );

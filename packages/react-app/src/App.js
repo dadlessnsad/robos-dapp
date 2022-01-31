@@ -98,7 +98,7 @@ function App() {
             <h1 className="headerTextVote"><a href="/" className="header-Links">Vote</a></h1>
             <h1 className="headerText"><a href="#Mint" className="header-Links">Mint</a></h1>
             <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
-            <h1 className="headerText">{} howndy</h1>
+            <h1 className="headerText">{}84.59</h1>
 
             <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
         </header>
