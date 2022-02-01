@@ -27,7 +27,6 @@ function BoltsBalance() {
         // Load the user's accounts.
         const accounts = await provider.listAccounts();
         setAccount(accounts[0]);
-        console.log(account)
         // Resolve the ENS name for the first account.
         const name = await provider.lookupAddress(accounts[0]);
 
@@ -74,7 +73,7 @@ function BoltsBalance() {
 
       const balance = (await contract.balanceOf(account)).toString();
       const parseBalance = ethers.utils.parseEther(balance);
-      const data = ethers.utils.formatEther(parseBalance)/ oneEther
+      const data = ethers.utils.formatEther(parseBalance) / oneEther
 
       setTotalBalance(data.toString());
 

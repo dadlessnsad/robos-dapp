@@ -25,7 +25,8 @@ import Accordion from "./components/accordion/accordion"
 import WhitelistMint from './components/whitelistmint/whitelistMint'
 import PresaleTimer from './components/presaleTimer/presaleTimer'
 import Ticker from './components/Ticker/ticker'
-import BoltsBalance from './components//boltsBalance/boltsBalance'
+import BoltsBalance from './components/boltsBalance/boltsBalance'
+import Claim from './components/claim/Claim'
 
 import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
@@ -99,6 +100,7 @@ function App() {
             <h1 className="headerText"><a href="#Roadmap" className="header-Links">About</a></h1>
             <h1 className="headerTextBolts"><a href="/" className="header-Links">$BOLTS</a></h1>
             <h1 className="headerText"><a href="/" className="header-Links">Claim</a></h1>
+            <Claim />
             <h1 className="headerTextVote"><a href="/" className="header-Links">Vote</a></h1>
             <h1 className="headerText"><a href="#Mint" className="header-Links">Mint</a></h1>
             <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
