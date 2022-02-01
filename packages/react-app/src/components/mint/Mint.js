@@ -8,14 +8,12 @@ import Counter from '../counter/counter';
 import { account } from '../../App'
 
 
-
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1);
   const [provider] = useWeb3Modal();
 
-  const ethValue = mintAmount * 0.1;
-  
 
+  const ethValue = mintAmount * 0.1;
   const CONTRACT_ADDRESS = '0x9efb028Ff1fcf3a37CC2EbCf54CB1F720fC835b1';
 
   const decrementMintAmount = () => {
@@ -34,7 +32,7 @@ function Mint() {
     setMintAmount(newMintAmount);
   };
 
-  const handleMint = async event =>{
+  const handleMint = async event => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(CONTRACT_ADDRESS, RobosNFT.abi, provider);
@@ -63,6 +61,9 @@ function Mint() {
           <h1 className="mintTitle">Mint to Join the $Robos Fam!</h1>
           <p className="mintdescription">
             Manufacture, & name your Robo!
+          </p>
+          <p className="mintdescription">
+            Cost to Mint: Ξ{ethValue} 
           </p>
         </div>
 
@@ -101,7 +102,8 @@ function Mint() {
           onClick={handleMint}
           className="mintButton">Mint
         </button>
-        <h2>Ξ {ethValue} <Counter /></h2>
+        <Counter />
+        
       </div>
     </div>
   );
