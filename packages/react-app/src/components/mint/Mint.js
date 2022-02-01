@@ -5,6 +5,7 @@ import RobosNFT from '../../utils/RobosNFT.json';
 import { ethers } from 'ethers'
 import useWeb3Modal from "../../hooks/useWeb3Modal";
 import Counter from '../counter/counter';
+import Ticker from '../Ticker/ticker'
 import { account } from '../../App'
 
 
@@ -26,8 +27,8 @@ function Mint() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
+    if (newMintAmount > 8) {
+      newMintAmount = 8;
     }
     setMintAmount(newMintAmount);
   };

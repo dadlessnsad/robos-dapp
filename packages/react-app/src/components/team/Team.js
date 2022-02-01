@@ -71,7 +71,7 @@ function Team() {
                         <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
             </article>
-            <article class="card">
+            {/* <article class="card">
                 <header class="card-header">
                     <h2>Project Coordination</h2>
                 </header>
@@ -91,7 +91,7 @@ function Team() {
                         <a href="https://twitter.com/WinduNFT">Twitter</a>
                         <a href="https://discord.gg/bctUawQPB3">Discord</a>
                     </div>
-            </article>
+            </article> */}
         </div>
     )
 }

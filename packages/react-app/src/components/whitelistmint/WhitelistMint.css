@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 2rem;
+  min-height: 100vh;
+  color: white;
+  margin-top: -200px;
+}
+
+.mintPage {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 12px;
+}
+
+.mintTop{
+  padding: 3rem;
+}
+
+.mintImage {
+  border-radius: 50%;
+}
+
+.countContainer{
+  justify-content:center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.mintAmount {
+  font-size: 1.5em;
+}
+
+.addButton {
+  font-size: 1.5em;
+  min-width: 2rem;
+  min-height: 2rem;
+  border-radius: 12px;
+  margin: 2rem;
+}
+
+.subButton {
+  font-size: 1.5em;
+  min-width: 2rem;
+  min-height: 2rem;
+  border-radius: 12px;
+  margin: 2rem;
+}
+
+.mintdescription {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mintButton {
+  font-size: 1.25em;
+  min-width: 7rem;
+  min-height: 3rem;
+  border-radius: 12px;
+}

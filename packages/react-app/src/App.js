@@ -22,6 +22,10 @@ import Roadmap from "./components/roadmap/Roadmap"
 import Team from "./components/team/Team"
 import Manufacture from "./components/manufacture/Manufacture"
 import Accordion from "./components/accordion/accordion"
+import WhitelistMint from './components/whitelistmint/whitelistMint'
+import PresaleTimer from './components/presaleTimer/presaleTimer'
+import Ticker from './components/Ticker/ticker'
+import BoltsBalance from './components//boltsBalance/boltsBalance'
 
 import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
@@ -40,7 +44,7 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
         // Load the user's accounts.
         const accounts = await provider.listAccounts();
         setAccount(accounts[0]);
-
+        console.log(account)
         // Resolve the ENS name for the first account.
         const name = await provider.lookupAddress(accounts[0]);
 
@@ -98,9 +102,11 @@ function App() {
             <h1 className="headerTextVote"><a href="/" className="header-Links">Vote</a></h1>
             <h1 className="headerText"><a href="#Mint" className="header-Links">Mint</a></h1>
             <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
-            <h1 className="headerText">{}84.59</h1>
-
+          
+            
             <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
+            <BoltsBalance /> 
+            
         </header>
         <div className="App-LandingPage">
             <div className="App-LandingImage">
@@ -108,8 +114,11 @@ function App() {
             </div>
         </div>
     </div>
-    <Roadmap />
+    <PresaleTimer />
+    <WhitelistMint />
+    <Ticker />
     <Mint />
+    <Roadmap />
     <Manufacture />
     <Team />
     <Accordion />
