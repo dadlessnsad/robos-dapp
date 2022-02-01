@@ -98,16 +98,13 @@ function App() {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="headerText"><a href="/" className="header-Links">Home</a></h1>
             <h1 className="headerText"><a href="#Roadmap" className="header-Links">About</a></h1>
-            <h1 className="headerTextBolts"><a href="/" className="header-Links">$BOLTS</a></h1>
-            <h1 className="headerText"><a href="/" className="header-Links">Claim</a></h1>
-            <Claim />
             <h1 className="headerTextVote"><a href="/" className="header-Links">Vote</a></h1>
             <h1 className="headerText"><a href="#Mint" className="header-Links">Mint</a></h1>
             <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
-          
-            
-            <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
+            <Claim />
+            <h1 className="headerTextBolts"><a href="/" className="header-Links">$BOLTS:</a></h1>       
             <BoltsBalance /> 
+            <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
             
         </header>
         <div className="App-LandingPage">

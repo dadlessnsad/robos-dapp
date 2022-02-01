@@ -67,7 +67,6 @@ function BoltsBalance() {
       const CONTRACT_ADDRESS = '0x929c33cf3abc1990debec51d575da09bdfd68323'
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
-      const signer = provider.getSigner(0);
       
       // const rawData = await contract.balanceOf(account)
 
@@ -84,7 +83,7 @@ function BoltsBalance() {
   console.log("total Balance", totalBalance)
   return (
     <div className="boltsBalance">
-      <h1 className="boltsText">$BLTS: {totalBalance}</h1>
+      <h1 className="boltsText">{totalBalance}</h1>
     </div>
   )
 }

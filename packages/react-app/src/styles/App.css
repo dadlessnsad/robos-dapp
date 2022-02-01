@@ -37,7 +37,6 @@
   
   .connectButton {
     height: 50px;
-    margin-left: 40px;
     padding: 5px;
     font-family: 'DotGothic16', sans-serif;
     font-size: 1rem;
@@ -49,19 +48,19 @@
   .headerText {
     font-size: 1rem;
     color: #fff;
-    margin-left: 40px;
+    margin-left: 20px;
   }
 
   .headerTextVote {
     font-size: 1rem;
     color: #fff;
-    margin-left: 40px;
+    margin-left: 20px;
   }
 
   .headerTextBolts {
     font-size: 1rem;
     color: #fff;
-    margin-left: 40px;
+    margin-left: 20px;
   }
   
   .header-Links {
