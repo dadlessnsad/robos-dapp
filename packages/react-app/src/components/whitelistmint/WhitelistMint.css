@@ -1,5 +1,5 @@
-.container {
-  display: flex;
+.WLcontainer {
+  display: none;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -7,7 +7,6 @@
   padding: 2rem;
   min-height: 100vh;
   color: white;
-  margin-top: -200px;
 }
 
 .mintPage {
@@ -64,4 +63,26 @@
   min-width: 7rem;
   min-height: 3rem;
   border-radius: 12px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .mintPage {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 600px;
+    height: 120vh;
+    border-radius: 12px;
+  }
+  
+  .minttitle {
+    font-size: .8rem;
+  }
+
+  .mintdescription {
+    font-size: 1rem
+  }
 }

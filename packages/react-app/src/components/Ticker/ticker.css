@@ -5,5 +5,16 @@
   justify-content: center;
   height: 200px;
   background-color: rgba(240,55,128, 0.4);
-  bottom: 0;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .banner {
+        display: flex;
+  
+    }
+  
+    .bannerText {
+      font-size: 1.25rem;
+    }
 }

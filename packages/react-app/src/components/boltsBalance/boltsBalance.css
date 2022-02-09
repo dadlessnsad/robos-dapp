@@ -1,12 +1,9 @@
 .boltsBalance {
   max-height: 50px;
+  min-width: 20px;
   font-family: 'DotGothic16', sans-serif;
   font-size: 1rem;
-  margin-left: 5px;
   color: #ffffff;
-  background-color: rgba(0, 0, 85, 0.5);
-  border-radius: 12px;
-  border: 1px solid #fff;
 }
 
 .boltsText {

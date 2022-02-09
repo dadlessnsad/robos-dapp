@@ -48,9 +48,9 @@ const PresaleTimer = () => {
 
   return (
     <div className="presaleBanner">
-      <h1 className="presaleBannerText">
+      <p className="presaleBannerText">
       PreSale in: <br />{timerComponents.length ? timerComponents : <span>Time's up!</span>}
-      </h1>
+      </p>
     </div>
   );
 };

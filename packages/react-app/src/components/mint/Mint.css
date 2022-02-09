@@ -3,9 +3,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  margin: 1rem;
   padding: 2rem;
-  min-height: 100vh;
   color: white;
 }
 
@@ -14,12 +12,12 @@
   text-align: center;
   justify-content: center;
   width: 600px;
-  height: 600px;
+  min-height: 760px;
   border-radius: 12px;
 }
 
 .mintTop{
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .mintImage {
@@ -63,4 +61,10 @@
   min-width: 7rem;
   min-height: 3rem;
   border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Roadmap {
+      display: flex;
+  }
 }

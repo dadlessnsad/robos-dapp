@@ -1,9 +1,24 @@
 .presaleBanner {
-  display: flex;
+  display: none;
   align-items: center;
   text-align: center;
   justify-content: center;
   height: 200px;
   background-color: rgba(240,55,128, 0.4);
   bottom: 0;
+}
+
+.presaleBannerText {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .presaleBanner {
+      display: none;
+
+  }
+
+  .presaleBannerText {
+    font-size: 1.25rem;
+  }
 }

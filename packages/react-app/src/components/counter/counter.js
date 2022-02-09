@@ -29,7 +29,6 @@ function Counter() {
       }
     
       await getTotalSupply();
-      console.log(getTotalSupply);
       setLoading(false)
     }
       fetchTotals();
@@ -44,7 +43,6 @@ function Counter() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider)
       const data = await contract.robosSupply()
-      console.log(data);
       
       setTotalMinted(data.toNumber());
     } catch(error) {

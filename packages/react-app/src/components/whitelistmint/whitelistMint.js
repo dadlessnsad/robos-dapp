@@ -55,7 +55,7 @@ function WhitelistMint() {
   }
   console.log({ mintAmount});
   return (
-    <div className="container" id="Mint">
+    <div className="WLcontainer" id="WLMint">
       <div className="mintPage">
         <div className="mintTop">
           <h1 className="mintTitle">Mint to Join the $Robos Fam!</h1>

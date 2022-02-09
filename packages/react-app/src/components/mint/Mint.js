@@ -14,7 +14,7 @@ function Mint() {
   const [provider] = useWeb3Modal();
 
 
-  const ethValue = mintAmount * 0.1;
+  const ethValue = (mintAmount * 0.1).toFixed(2)
   const CONTRACT_ADDRESS = '0x9efb028Ff1fcf3a37CC2EbCf54CB1F720fC835b1';
 
   const decrementMintAmount = () => {

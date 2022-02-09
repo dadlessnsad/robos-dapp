@@ -2,8 +2,8 @@ import { useQuery } from "@apollo/react-hooks";
 import { Contract } from "@ethersproject/contracts";
 import { getDefaultProvider } from "@ethersproject/providers";
 import React, { useEffect, useState } from "react";
-import { ethers } from 'ethers'
-import BoltsTk from './utils/BoltsToken.json';
+import { ethers, BigNumber } from 'ethers'
+import BoltsToken from './utils/BoltsToken.json';
 
 
 import {Button} from "./components";
@@ -15,6 +15,9 @@ import TwitterLogo from "./images/TwitterLogowhite.png";
 import EtherScanLogo from "./images/etherscanLogo.png";
 import GlitchesLogo from "./images/GlitchLogo.png";
 import LandingLogo from './images/RobosLogo.png';
+import {hasEthereum} from './utils/ethereum'
+import ROBOS_CONTRACT_ADDRESS from './utils/constants'
+import BOLTS_CONTRACT_ADDRESS from './utils/constants'
 import useWeb3Modal from "./hooks/useWeb3Modal";
 
 import Mint from "./components/mint/Mint"
@@ -25,7 +28,6 @@ import Accordion from "./components/accordion/accordion"
 import WhitelistMint from './components/whitelistmint/whitelistMint'
 import PresaleTimer from './components/presaleTimer/presaleTimer'
 import Ticker from './components/Ticker/ticker'
-import BoltsBalance from './components/boltsBalance/boltsBalance'
 import Claim from './components/claim/Claim'
 
 import { addresses, abis } from "@project/contracts";
@@ -34,6 +36,9 @@ import GET_TRANSFERS from "./graphql/subgraph";
 function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
   const [account, setAccount] = useState("");
   const [rendered, setRendered] = useState("");
+  const [totalBalance, setTotalBalance] = useState(0)
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     async function fetchAccount() {
@@ -45,8 +50,38 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
         // Load the user's accounts.
         const accounts = await provider.listAccounts();
         setAccount(accounts[0]);
-        console.log(account)
         // Resolve the ENS name for the first account.
+        if (provider) {
+          const { ethereum } = window
+          const chainParams = [
+            {
+              chainId: "0x4",
+              chainName: "Rinkeby Testnet",
+              nativeCurrency: {
+                name: "ETHER",
+                symbol: "ETH",
+                decimals: 18,
+              },
+              rpcUrls: ["https://rinkeby.infura.io/v3/30dcd2131e91416c9794eeea577b54eb"],
+              blockExplorerUrls: ["https://rinkey.etherscan.io"],
+            },
+          ]
+  
+          window.ethereum
+            .request({ method: "wallet_addEthereumChain", chainParams })
+            .catch(console.error)
+            ethereum
+          .request({
+            method: `wallet_switchEthereumChain`,
+            params: [{ chainId: "0x4" }],
+          })
+          .catch(console.error)
+        }
+        
+        window.ethereum.on(`chainChanged`, () => {
+          window.location.reload()
+        })
+
         const name = await provider.lookupAddress(accounts[0]);
 
         // Render either the ENS name or the shortened account address.
@@ -55,6 +90,7 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
         } else {
           setRendered(account.substring(0, 6) + "..." + account.substring(36));
         }
+        
       } catch (err) {
         setAccount("");
         setRendered("");
@@ -64,8 +100,39 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
     fetchAccount();
   }, [account, provider, setAccount, setRendered]);
 
+  useEffect( function() {
+    async function fetchTotals() {
+      if(! hasEthereum()) {
+        console.log('Install MetaMask')
+          setLoading(false)
+          return
+      }
+    
+      await getBalanceOf();
+      setLoading(false)
+    }
+      fetchTotals();
+  });
+  async function getBalanceOf() {
+    try {
+      const CONTRACT_ADDRESS = '0x929c33cf3abc1990debec51d575da09bdfd68323'
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, BoltsToken.abi, provider);
+
+      const balance = (await contract.balanceOf(account)).toString();
+      const data = ethers.utils.formatEther(balance)
+
+      setTotalBalance(Math.round(data.toString()).toFixed(2));
+
+    } catch(error) {
+      console.error(error)      
+    }
+  }
   return (
-    <button
+    <div className="boltsContainer">
+      <div className="boltsBalance">
+        <h1 className="boltsText">{totalBalance}</h1>
+      </div>
+      <button
         className="connectButton" 
         onClick={() => {
             if (!provider) {
@@ -73,13 +140,16 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
             } else {
                 logoutOfWeb3Modal();
             }
+            getBalanceOf();
         }}
     >
       {rendered === "" && "Connect Wallet"}
       {rendered !== "" && rendered}
     </button>
+  </div>
   );
 }
+
 
 function App() {
   // const { loading, error, data } = useQuery(GET_TRANSFERS);
@@ -103,9 +173,7 @@ function App() {
             <h1 className="headerText"><a href="#Manufacture" className="header-Links">Manufacture</a></h1>
             <Claim />
             <h1 className="headerTextBolts"><a href="/" className="header-Links">$BOLTS:</a></h1>       
-            <BoltsBalance /> 
             <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
-            
         </header>
         <div className="App-LandingPage">
             <div className="App-LandingImage">
@@ -113,11 +181,11 @@ function App() {
             </div>
         </div>
     </div>
+    <Roadmap />
     <PresaleTimer />
     <WhitelistMint />
     <Ticker />
     <Mint />
-    <Roadmap />
     <Manufacture />
     <Team />
     <Accordion />
