@@ -7,10 +7,10 @@ import RoboOne from "../../images/GenesisRobos/7.png";
 function Manufacture() {
     return (
         <div className="Manufacture" id="Manufacture">
-            {/* <div className="ManufactureBox">
-                <h1 className="ManufactureTitle">Manufacturing Coming Soon!</h1>
-            </div> */}
-            <div className="ManufactureCtn">
+            <div className="ManufactureBox">
+                <button className="ManufactureBtn">Your Robos</button>
+            </div>
+            {/* <div className="ManufactureCtn">
                 <div className="ManufactureBox1">
                     <h1>Robo 1</h1>
                     <img className="UserRobo" src={RoboOne} alt="robo" />
@@ -23,7 +23,7 @@ function Manufacture() {
                     <img className="UserRobo" src={RoboTwo} alt="robo" />
                 </div>
             </div>
-            
+             */}
         </div>
         
     )
