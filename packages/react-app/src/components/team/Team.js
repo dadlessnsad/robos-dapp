@@ -5,7 +5,6 @@ import React from "react";
 import XurgisLogo from "../../images/GenesisRobos/1.png";
 import ZedsLogo from "../../images/GenesisRobos/4.png";
 import DadlessLogo from "../../images/GenesisRobos/5.png";
-import WinduLogo from "../../images/GenesisRobos/7.png";
 
 
 function Team() {

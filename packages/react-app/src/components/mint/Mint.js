@@ -5,8 +5,7 @@ import RobosNFT from '../../utils/RobosNFT.json';
 import { ethers } from 'ethers'
 import useWeb3Modal from "../../hooks/useWeb3Modal";
 import Counter from '../counter/counter';
-import Ticker from '../Ticker/ticker'
-import { account } from '../../App'
+
 
 
 function Mint() {
@@ -35,7 +34,6 @@ function Mint() {
 
   const handleMint = async event => {
     try {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(CONTRACT_ADDRESS, RobosNFT.abi, provider);
       const signer = provider.getSigner(0);
       const contractSigner = contract.connect(signer);

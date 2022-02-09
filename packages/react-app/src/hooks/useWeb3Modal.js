@@ -1,8 +1,5 @@
 import { Web3Provider } from "@ethersproject/providers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import Fortmatic from "fortmatic";
-import Portis from "@portis/web3";
-import Torus from "@toruslabs/torus-embed";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Web3Modal from "web3modal";
@@ -10,14 +7,12 @@ import Web3Modal from "web3modal";
 // Enter a valid infura key here to avoid being rate limited
 // You can get a key for free at https://infura.io/register
 const INFURA_ID = "30dcd2131e91416c9794eeea577b54eb";
-
 const NETWORK = "rinkeby";
 
 function useWeb3Modal(config = {}) {
   const [provider, setProvider] = useState();
   const [autoLoaded, setAutoLoaded] = useState(false);
   const { autoLoad = true, infuraId = INFURA_ID, network = NETWORK } = config;
-
 
   // Web3Modal also supports many other wallets.
   // You can see other options at https://github.com/Web3Modal/web3modal
@@ -31,20 +26,6 @@ function useWeb3Modal(config = {}) {
       network,
       cacheProvider: true,
       providerOptions: {
-        portis: {
-          package: Portis, // required
-          options: {
-            id: "f127a727-8db0-48e0-9c3c-bf2e7dc9d00e" // required
-          }
-        },
-        torus: {
-          package: Torus, // required
-          options: {
-            networkParams: {
-              host: "https://localhost:3000", // optional
-            }
-          }
-        },
         walletconnect: {
           package: WalletConnectProvider,
           options: {
@@ -52,13 +33,6 @@ function useWeb3Modal(config = {}) {
           },
         },
       },
-      fortmatic: {
-        package: Fortmatic, // required
-        options: {
-          key: "pk_live_658B798DAF01F7F4", // required,
-          network: customNetworkOptions // if we don't pass it, it will default to localhost:8454
-        }
-      }
     });
   }, [infuraId, network]);
 
